@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Escape - Juego de Puzzle Multidimensional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="uiOverlay">
+            <div id="gameTitle">
+                <h1>QUANTUM ESCAPE</h1>
+                <p>Escape de la realidad cuántica</p>
+            </div>
+            
+            <div id="controls">
+                <div class="control-group">
+                    <h3>Controles</h3>
+                    <p><strong>WASD:</strong> Mover personaje</p>
+                    <p><strong>ESPACIO:</strong> Crear clon cuántico</p>
+                    <p><strong>Q:</strong> Cambiar entre clones</p>
+                    <p><strong>R:</strong> Reiniciar nivel</p>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Objetivo</h3>
+                    <p>Llega a la salida usando tus clones cuánticos para resolver puzzles imposibles.</p>
+                </div>
+            </div>
+            
+            <button id="startButton" class="glow-button">INICIAR JUEGO</button>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="gameUI" style="display: none;">
+            <div id="levelInfo">
+                <span id="levelNumber">Nivel 1</span>
+                <span id="clonesCount">Clones: 0</span>
+            </div>
+            
+            <div id="quantumMeter">
+                <div class="meter-label">Energía Cuántica</div>
+                <div class="meter-bar">
+                    <div id="quantumBar" class="meter-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="levelComplete" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>¡Nivel Completado!</h2>
+                <p>Has usado el poder cuántico para escapar.</p>
+                <button id="nextLevel" class="glow-button">Siguiente Nivel</button>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" src="bg-music.mp3" loop autoplay style="display:none"></audio>
+    <audio id="sfxClone" src="sfx-clone.mp3" style="display:none"></audio>
+    <audio id="sfxPortal" src="sfx-portal.mp3" style="display:none"></audio>
+    <audio id="sfxEnemy" src="sfx-enemy.mp3" style="display:none"></audio>
+    <div id="levelSelect" style="display:none;" class="modal">
+        <div class="modal-content">
+            <h2>Selecciona Nivel</h2>
+            <div id="levelButtons"></div>
+            <button id="closeLevelSelect" class="glow-button">Cerrar</button>
+        </div>
+    </div>
+    <div id="tutorialModal" style="display:none;" class="modal">
+        <div class="modal-content">
+            <h2>Tutorial</h2>
+            <p>Usa WASD para moverte, ESPACIO para crear clones, Q para cambiar, E para teletransportar, R para reiniciar. Evita enemigos y usa portales. ¡Activa los interruptores correctos!</p>
+            <button id="closeTutorial" class="glow-button">Cerrar</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html> 
